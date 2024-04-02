@@ -1,0 +1,52 @@
+<div class="title" mat-dialog-title>
+    <h1>Add Products</h1>
+</div>
+
+<div class="registration-form m-3 p-4">
+    <form [formGroup]="ProductsForm">
+        <div class="row">
+            <div class="col-md-6" *ngIf="isUpdateActive">
+                <mat-form-field appearance="outline">
+                    <mat-label>ProductID</mat-label>
+                    <input type="number" formControlName="ProductID" matInput placeholder="ProductID" [readonly]="true">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Product Name</mat-label>
+                    <input type="text" formControlName="ProductName" matInput placeholder="Product Name">
+
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <input type="text" formControlName="Description" matInput>
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Price</mat-label>
+                    <input type="number" formControlName="Price" matInput>
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+            <!-- Add this element to display the file name -->
+
+            <div class="col-md-6">
+                <!-- <label id="fileLabel"></label> -->
+                <input class="form-control" type="file" id="formFile" formControlName="Image"
+                    (change)="onFileSelected($event)">
+            </div>
+        </div>
+
+        <button *ngIf="!isUpdateActive" (click)="submit()" class="mt-4" mat-raised-button>Submit</button>
+        <button *ngIf="isUpdateActive" (click)="update()" class="mt-4" mat-raised-button>Update</button>
+        <pre>{{ ProductsForm.value | json }}</pre>
+    </form>
+</div>

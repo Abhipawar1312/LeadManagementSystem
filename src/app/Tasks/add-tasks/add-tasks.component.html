@@ -1,0 +1,55 @@
+<div class="title" mat-dialog-title>
+    <h1>Add Tasks</h1>
+</div>
+
+<div class="registration-form m-3 p-4">
+    <form [formGroup]="TasksForm">
+        <div class="row">
+            <div class="col-md-6" *ngIf="isUpdateActive">
+                <mat-form-field appearance="outline">
+                    <mat-label>TaskID</mat-label>
+                    <input type="text" formControlName="TaskID" matInput placeholder="TaskID" [readonly]="true">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Task Title</mat-label>
+                    <input type="text" formControlName="TaskTitle" matInput placeholder="Task Title">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Assigned To</mat-label>
+                    <input type="text" formControlName="AssignedTo" matInput>
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Start Date</mat-label>
+                    <input formControlName="StartDate" matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Due Date</mat-label>
+                    <input formControlName="DueDate" matInput [matDatepicker]="picker1">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <button *ngIf="!isUpdateActive" (click)="submit()" class="mt-4" mat-raised-button>Submit</button>
+        <button *ngIf="isUpdateActive" (click)="update()" class="mt-4" mat-raised-button>Update</button>
+        <pre>{{ TasksForm.value | json }}</pre>
+    </form>
+</div>

@@ -1,0 +1,75 @@
+<div class="title" mat-dialog-title>
+    <h1>Add Contacts</h1>
+</div>
+
+<div class="registration-form m-3 p-4">
+    <form [formGroup]="ContactsForm">
+        <div class="row">
+
+            <div class="col-md-6" *ngIf="isUpdateActive">
+                <mat-form-field appearance="outline">
+                    <mat-label>ContactID</mat-label>
+                    <input type="text" formControlName="ContactID" matInput placeholder="ContactID" [readonly]="true">
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Lead Source</mat-label>
+                    <input type="text" formControlName="LeadSource" matInput placeholder="LeadSource">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Lead For</mat-label>
+                    <input type="text" formControlName="LeadFor" matInput placeholder="LeadFor">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Lead Priority</mat-label>
+                    <mat-select formControlName="LeadPriority">
+                        <mat-option *ngFor="let LeadPriority of LeadPriority" [value]="LeadPriority">
+                            {{LeadPriority}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input type="text" formControlName="FirstName" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input type="text" formControlName="LastName" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Mobile No.</mat-label>
+                    <input type="number" formControlName="MobileNo" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input type="email" formControlName="Email" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Address</mat-label>
+                    <input type="text" formControlName="Address" matInput>
+                </mat-form-field>
+            </div>
+
+        </div>
+
+        <button *ngIf="!isUpdateActive" (click)="submit()" class="mt-4" mat-raised-button>Submit</button>
+        <button *ngIf="isUpdateActive" (click)="update()" class="mt-4" mat-raised-button>Update</button>
+        <pre>{{ ContactsForm.value | json }}</pre>
+    </form>
+</div>

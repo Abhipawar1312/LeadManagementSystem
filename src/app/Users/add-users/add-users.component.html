@@ -1,0 +1,101 @@
+<div class="title" mat-dialog-title>
+    <h1>Add Users</h1>
+</div>
+
+<div class="registration-form m-3 p-4">
+    <form [formGroup]="UsersForm">
+        <div class="row">
+            <div class="col-md-6" *ngIf="isUpdateActive">
+                <mat-form-field appearance="outline">
+                    <mat-label>UserID</mat-label>
+                    <input type="number" formControlName="UserID" matInput placeholder="UserID" [readonly]="true">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>UserName</mat-label>
+                    <input type="text" formControlName="UserName" matInput placeholder="UserName">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input type="password" formControlName="Password" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input type="email" formControlName="Email" matInput>
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>FirstName</mat-label>
+                    <input type="text" formControlName="FirstName" matInput placeholder="FirstName">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>LastName</mat-label>
+                    <input type="text" formControlName="LastName" matInput placeholder="LastName">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Date of Birth</mat-label>
+                    <input formControlName="DateofBirth" matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>PhoneNo</mat-label>
+                    <input type="number" formControlName="PhoneNo" matInput placeholder="PhoneNo">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>MobileNo</mat-label>
+                    <input type="number" formControlName="MobileNo" matInput placeholder="MobileNo">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>UserRole</mat-label>
+                    <input type="text" formControlName="UserRole" matInput placeholder="UserRole">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <label id="fileLabel"></label>
+
+            <div class="col-md-6">
+                <input class="form-control" type="file" id="formFile" formControlName="Image"
+                    (change)="onFileSelected($event)">
+            </div>
+        </div>
+
+        <button *ngIf="!isUpdateActive" (click)="submit()" class="mt-4" mat-raised-button>Submit</button>
+        <button *ngIf="isUpdateActive" (click)="update()" class="mt-4" mat-raised-button>Update</button>
+        <pre>{{ UsersForm.value | json }}</pre>
+    </form>
+</div>

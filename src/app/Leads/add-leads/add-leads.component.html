@@ -1,0 +1,67 @@
+<div class="title" mat-dialog-title>
+    <h1>Add Leads</h1>
+</div>
+
+<div class="registration-form m-3 p-4">
+    <form [formGroup]="leadsForm">
+        <div class="row">
+            <div class="col-md-6" *ngIf="isUpdateActive">
+                <mat-form-field appearance="outline">
+                    <mat-label>LeadID</mat-label>
+                    <input type="text" formControlName="LeadID" matInput placeholder="LeadID" [readonly]="true">
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Lead Name</mat-label>
+                    <input type="text" formControlName="LeadName" matInput placeholder="Lead Name">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Lead Status</mat-label>
+                    <mat-select formControlName="LeadStatus">
+                        <mat-option *ngFor="let LeadStatus of LeadStatus" [value]="LeadStatus">
+                            {{LeadStatus}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Lead Source</mat-label>
+                    <input type="text" formControlName="LeadSource" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Company Name</mat-label>
+                    <input type="text" formControlName="CompanyName" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Creation Date</mat-label>
+                    <input formControlName="CreationDate" matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Modification Date</mat-label>
+                    <input formControlName="ModificationDate" matInput [matDatepicker]="picker1">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <button *ngIf="!isUpdateActive" (click)="submit()" class="mt-4" mat-raised-button>Submit</button>
+        <button *ngIf="isUpdateActive" (click)="update()" class="mt-4" mat-raised-button>Update</button>
+        <pre>{{ leadsForm.value | json }}</pre>
+    </form>
+</div>

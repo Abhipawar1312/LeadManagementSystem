@@ -1,0 +1,228 @@
+<!-- <div class="sidebar position-fixed top-0 bottom-0 bg-white border-end">
+  <div class="d-flex align-items-center p-3">
+    <a href="#" class="sidebar-logo text-uppercase fw-bold text-decoration-none text-indigo fs-4">LMS</a>
+    <i class="sidebar-toggle ri-arrow-left-circle-line ms-auto fs-5 d-none d-md-block"></i>
+  </div>
+  <ul class="sidebar-menu p-3 m-0 mb-0">
+    <li class="sidebar-menu-item active">
+      <a routerLink="/Dashboard" href="#">
+        <i class="ri-dashboard-line sidebar-menu-item-icon"></i>
+        Dashboard
+      </a>
+    </li>
+    <li class="sidebar-menu-item has-dropdown">
+      <a href="#">
+        <i class="ri-group-line sidebar-menu-item-icon"></i>
+        Leads
+        <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+      </a>
+      <ul class="sidebar-dropdown-menu">
+        <li class="sidebar-dropdown-menu-item">
+          <a routerLink="/AddLeads" href="#">
+            Add Leads
+          </a>
+        </li>
+        <li routerLink="/ManageLeads" class="sidebar-dropdown-menu-item has-dropdown">
+          <a href="#">
+            Manage Leads
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="sidebar-menu-item has-dropdown">
+      <a href="#">
+        <i class="ri-shopping-bag-2-line sidebar-menu-item-icon"></i>
+        Products
+        <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+      </a>
+      <ul class="sidebar-dropdown-menu">
+        <li class="sidebar-dropdown-menu-item">
+          <a routerLink="/AddProducts" href="#">
+            Add Products
+          </a>
+        </li>
+        <li class="sidebar-dropdown-menu-item">
+          <a routerLink="/ManageProducts" href="#">
+            Manage Products
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="sidebar-menu-item has-dropdown">
+      <a href="#">
+        <i class="ri-task-line sidebar-menu-item-icon"></i>
+        Tasks
+        <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+      </a>
+      <ul class="sidebar-dropdown-menu">
+        <li class="sidebar-dropdown-menu-item">
+          <a routerLink="/AddTasks" href="#">
+            Add Tasks
+          </a>
+        </li>
+        <li class="sidebar-dropdown-menu-item">
+          <a routerLink="/ManageTasks" href="#">
+            Manage Tasks
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="sidebar-menu-item has-dropdown">
+      <a href="#">
+        <i class="ri-user-line sidebar-menu-item-icon"></i>
+        Users
+        <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+      </a>
+      <ul class="sidebar-dropdown-menu">
+        <li class="sidebar-dropdown-menu-item">
+          <a routerLink="/AddUsers" href="#">
+            Add Users
+          </a>
+        </li>
+        <li class="sidebar-dropdown-menu-item">
+          <a routerLink="/ManageUsers" href="#">
+            Manage Users
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="sidebar-menu-item has-dropdown">
+      <a href="#">
+
+        <i class="ri-contacts-book-line sidebar-menu-item-icon"></i>
+        Contacts
+        <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+      </a>
+      <ul class="sidebar-dropdown-menu">
+        <li class="sidebar-dropdown-menu-item">
+          <a routerLink="/AddContacts" href="#">
+            Add Contacts
+          </a>
+        </li>
+        <li class="sidebar-dropdown-menu-item">
+          <a routerLink="/ManageContacts" href="#">
+            Manage Contacts
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="sidebar-menu-item has-dropdown">
+      <a href="#">
+        <i class="ri-file-list-line sidebar-menu-item-icon"></i>
+        Lead Status
+        <i class="ri-arrow-down-s-line sidebar-menu-item-accordion ms-auto"></i>
+      </a>
+      <ul class="sidebar-dropdown-menu">
+        <li class="sidebar-dropdown-menu-item">
+          <a routerLink="/NewLeadProgression" href="#">
+            New
+          </a>
+        </li>
+        <li class="sidebar-dropdown-menu-item">
+          <a routerLink="/WorkingLeadProgression" href="#">
+            Working
+          </a>
+        </li>
+        <li class="sidebar-dropdown-menu-item">
+          <a routerLink="/QualifiedLeadProgression" href="#">
+            Qualified
+          </a>
+        </li>
+        <li class="sidebar-dropdown-menu-item">
+          <a routerLink="/FailedLeadProgression" href="#">
+            Failed
+          </a>
+        </li>
+        <li class="sidebar-dropdown-menu-item">
+          <a routerLink="/ClosedLeadProgression" href="#">
+            Closed
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="sidebar-menu-item">
+      <a href="#">
+        <i class="ri-article-line sidebar-menu-item-icon"></i>
+        Reports
+      </a>
+    </li>
+
+  </ul>
+</div>
+<div class="sidebar-overlay"></div>
+
+
+<main class="bg-light">
+  <div class="p-2">
+    <nav class="px-3 py-2 bg-white rounded shadow-sm">
+      <i class="ri-menu-line sidebar-toggle me-3 d-block d-md-none"></i>
+      <h3 class="fw-bold mb-0 me-auto">Dashboard</h3>
+      <div class="dropdown me-3 d-none d-sm-block">
+        <div class="cursor-pointer dropdown-toggle navbar-link" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="ri-notification-line"></i>
+        </div>
+        <div class="dropdown-menu fx-dropdown-menu">
+          <h5 class="p-3 bg-indigo text-light">Notification</h5>
+          <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+              <div class="me-auto">
+                <div class="fw-semibold">Subheading</div>
+                <span class="fs-7">Content for list item</span>
+              </div>
+              <span class="badge bg-primary rounded-pill">14</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+              <div class="me-auto">
+                <div class="fw-semibold">Subheading</div>
+                <span class="fs-7">Content for list item</span>
+              </div>
+              <span class="badge bg-primary rounded-pill">14</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+              <div class="me-auto">
+                <div class="fw-semibold">Subheading</div>
+                <span class="fs-7">Content for list item</span>
+              </div>
+              <span class="badge bg-primary rounded-pill">14</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+              <div class="me-auto">
+                <div class="fw-semibold">Subheading</div>
+                <span class="fs-7">Content for list item</span>
+              </div>
+              <span class="badge bg-primary rounded-pill">14</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+              <div class="me-auto">
+                <div class="fw-semibold">Subheading</div>
+                <span class="fs-7">Content for list item</span>
+              </div>
+              <span class="badge bg-primary rounded-pill">14</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <div class="d-flex align-items-center cursor-pointer dropdown-toggle" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <span class="me-2 d-none d-sm-block">John Doe</span>
+          <img class="navbar-profile-image"
+            src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt="Image">
+        </div>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container"> -->
+
+<router-outlet></router-outlet>
+<!-- </div>
+  </div>
+</main>
+<ng-toast [style]="{width:'300px'}"></ng-toast>
+<ng-confirm></ng-confirm> -->
